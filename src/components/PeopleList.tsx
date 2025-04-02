@@ -1,6 +1,6 @@
-import { NavLink, useParams } from 'react-router-dom';
-import { Person } from '../types';
 import classNames from 'classnames';
+import { Person } from '../types';
+import { NavLink, useParams } from 'react-router-dom';
 
 type PeopleProps = {
   peoples: Person[];
@@ -8,10 +8,10 @@ type PeopleProps = {
 
 export const PeopleList: React.FC<PeopleProps> = ({ peoples }) => {
   const { personSlug } = useParams();
-  const selectedPersone = personSlug ?? '';
+  const selectedPersone = personSlug;
 
   const getPersone = (name: string | null, arr: Person[]) => {
-    return arr.find(person => person.name === name);
+    return arr.find(persone => persone.name === name);
   };
 
   return (
